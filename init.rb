@@ -1,1 +1,3 @@
-# Include hook code here
+require 'rubaidh/default_values'
+
+ActiveRecord::Base.send :include, Rubaidh::DefaultValues
