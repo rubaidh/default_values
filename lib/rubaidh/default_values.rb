@@ -20,6 +20,7 @@ module Rubaidh
       def initialize_with_default_values(*args)
         returning initialize_without_default_values(*args) do
           default_value_options.each do |k, v|
+            v = v.call if v.respond_to?(:call)
             write_attribute(k, v) if read_attribute(k).nil?
           end
         end
