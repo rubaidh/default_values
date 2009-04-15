@@ -1,13 +1,25 @@
 DefaultValues
 =============
 
-Introduction goes here.
+default_values is a rails plugin that allows you to easily set the default values for new objects in memory without tampering with initialize in the model yourself.
+
+Tested to work with Rails 2.3.2
 
 
 Example
 =======
 
-Example goes here.
+You have a model with an attribute name:
+
+class Biscuit < ActiveRecord::Base
+  default_values  :name => "foo"
+end
+
+You can also pass blocks to the attribute:
+
+class Biscuit < ActiveRecord::Base
+  default_values  :name => lambda { rand(10) }
+end
 
 
-Copyright (c) 2007 [name of plugin creator], released under the MIT license
+Copyright (c) 2007-2009 Rubaidh Ltd, released under the MIT license
